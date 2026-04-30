@@ -56,8 +56,8 @@ class PageController extends Controller
         ]);
         $newUser = $userAction->execute(new User(), $request->all());
         Auth::login($newUser);
-        $lineNotify = new LineNotifyService();
-        $lineNotify->execute('sjdhfgjsdhgf sdfhgds');
+        // $lineNotify = new LineNotifyService();
+        // $lineNotify->execute('sjdhfgjsdhgf sdfhgds');
         return redirect()->route('index');
     }
 
