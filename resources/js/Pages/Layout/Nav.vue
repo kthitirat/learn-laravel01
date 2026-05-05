@@ -36,10 +36,10 @@
                 <!-- <div v-if="this.$page.props.user">
                     <img :src="this.$page.props.user.profile_photo_url" class="h-8 w-8 rounded-full object-cover">                    
                 </div> -->
-                <div class="flex-none gap-2">
+                <div v-if="this.$page.props.user" class="flex-none gap-2">
                     <div class="dropdown dropdown-end">
                         <div class="btn btn-ghost btn-circle avatar" role="button" tabindex="0">
-                            <div v-if="this.$page.props.user" class="w-10 rounded-full" >
+                            <div  class="w-10 rounded-full" >
                                 <img :src="this.$page.props.user.profile_photo_url" alt="Admin Logo"/>
                             </div>
                         </div>
