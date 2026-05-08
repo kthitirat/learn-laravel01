@@ -19,6 +19,14 @@ class UserSeeder extends Seeder
             'name' => 'admin',
             'email' => 'admin@admin.com'
         ]);
+
+        User::factory()->create([
+            'role_id' => Role::where('name', 'user')->first()->id,
+            'name' => 'คุณทดสอบ',
+            'institution' => 'มหาวิทยาลัยนเรศวร',
+            'tel' => '0885525396',
+            'email' => 'test@test.com'
+        ]);
       
         User::factory()->count(30)->create();
     }

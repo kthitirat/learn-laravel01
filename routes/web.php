@@ -7,6 +7,7 @@ use App\Http\Controllers\PageController;
 use App\Http\Controllers\AnnouncementController;
 use Laravel\Fortify\Features;
 use App\Http\Controllers\SubjectController;
+use Dompdf\FrameReflower\Page;
 
 //Route::get('/login', [PageController::class, 'login'])
 //    ->name('login');
@@ -16,6 +17,9 @@ if (Features::enabled(Features::registration())) {
         ->name('register');
     Route::post('/register', [PageController::class, 'storeRegister']);
 }
+
+Route::get('/form', [PageController::class, 'form'])->name('form');
+Route::post('/form/save-draft', [PageController::class, 'saveDraft'])->name('save_draft');
 
 
 Route::get('/', [PageController::class, 'index'])->name('index');
